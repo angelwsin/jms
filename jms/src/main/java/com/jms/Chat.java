@@ -26,14 +26,15 @@ public class Chat implements MessageListener{
 	  public Chat(String topicFactory,String topicName,String username)throws Exception {
 		// TODO Auto-generated constructor stub
 		  //jndi
-		  Properties env = new Properties();
-		  env.setProperty(Context.SECURITY_PRINCIPAL, "system");
-		  env.setProperty(Context.SECURITY_CREDENTIALS, "manager");
-		  env.setProperty(Context.INITIAL_CONTEXT_FACTORY, "org.apache.activemq.jndi.ActiveMQInitialContextFactory");
-		  env.setProperty(Context.PROVIDER_URL, "tcp://localhost:61616");
-		  env.setProperty("connectionFactoryNames", "chatFactory");
-		  env.setProperty("topic.topic1", "jms.topic1");
-		  InitialContext ctx  = new InitialContext(env);
+//		  Properties env = new Properties();
+//		  env.setProperty(Context.SECURITY_PRINCIPAL, "system");
+//		  env.setProperty(Context.SECURITY_CREDENTIALS, "manager");
+//		  env.setProperty(Context.INITIAL_CONTEXT_FACTORY, "org.apache.activemq.jndi.ActiveMQInitialContextFactory");
+//		  env.setProperty(Context.PROVIDER_URL, "tcp://localhost:61616");
+//		  env.setProperty("connectionFactoryNames", "chatFactory");
+//		  env.setProperty("topic.topic1", "jms.topic1");
+//		  InitialContext ctx  = new InitialContext(env);
+		  InitialContext ctx  = new InitialContext();
 		TopicConnectionFactory factory = (TopicConnectionFactory) ctx.lookup(topicFactory);
 		topicConnection=   factory.createTopicConnection();
 		TopicSession pubSession = topicConnection.createTopicSession(false, Session.AUTO_ACKNOWLEDGE);
