@@ -2,7 +2,6 @@ package com.jms;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Properties;
 
 import javax.jms.JMSException;
 import javax.jms.Message;
@@ -15,7 +14,6 @@ import javax.jms.TopicConnectionFactory;
 import javax.jms.TopicPublisher;
 import javax.jms.TopicSession;
 import javax.jms.TopicSubscriber;
-import javax.naming.Context;
 import javax.naming.InitialContext;
 
 public class Chat implements MessageListener{
