@@ -1,6 +1,7 @@
 package com.jms;
 
 import java.io.BufferedReader;
+
 import java.io.InputStreamReader;
 
 import javax.jms.JMSException;
@@ -15,6 +16,10 @@ import javax.jms.TopicPublisher;
 import javax.jms.TopicSession;
 import javax.jms.TopicSubscriber;
 import javax.naming.InitialContext;
+
+/*
+ * Message 有三个部分 消息头  消息属性 有效负载
+ */
 
 public class Chat implements MessageListener{
 	private TopicConnection topicConnection;
